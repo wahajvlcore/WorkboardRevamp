@@ -1,7 +1,6 @@
 {
   "name": "value-link-ams",
   "version": "0.0.0",
-  "homepage": "https://wahajvlcore.github.io/value-link-ams",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
