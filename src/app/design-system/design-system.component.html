@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="app">
+      <div class="sidebar">
+        <div class="logo">
+          <img src="../assets/images/core-logo.svg" alt="">
+          <span>Design System</span>
+        </div>
+        <nav>
+          <ul>
+            <li *ngFor="let componentName of componentNames">
+              <a [routerLink]="['/design-system', componentName]">{{ componentName | noHyphenBetween }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main-content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  

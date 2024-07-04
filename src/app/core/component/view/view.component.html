@@ -1,0 +1,70 @@
+<div class="views-teams-config">
+
+    <div class="main-views-wrapper">
+        <div class="logged-user">
+            <div class="user-initials">
+                RP
+            </div>
+            <div class="welcome-text">
+                Welcome to Workboard Robert Patricia!
+            </div>
+        </div>
+        <div class="views-wrapper">
+            <div class="select-views">
+                <button mat-button>
+                    <img src="../../../../assets/images/push_pin.svg"/>
+                    Default View
+                </button>
+                <button mat-button>
+                    <img src="../../../../assets/images/push_pin.svg"/>
+                    My Custom View
+                </button>
+                <button mat-button>
+                    <img src="../../../../assets/images/push_pin.svg"/>
+                    My Custom View 2
+                </button>
+                <button mat-button class="add-views-button">
+                    <img src="../../../../assets/images/add_view.svg"/>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="teams-configuration">
+        <div class="save-view">
+            <button mat-button>
+                Save View
+            </button>
+        </div>
+        <div class="select-teams-dropdown">
+            <mat-form-field>
+                <mat-label>Favorite food</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <button mat-button>
+                <img src="../../../../assets/images/manage_accounts.svg" />
+              </button>
+        </div>
+        <div class="set-default">
+            
+            <label>Set as Default</label>
+            <!-- <button mat-button>
+                <img src="../../../../assets/images/nav-icons/chevron_right.svg" />
+            </button> -->
+
+            <button mat-button [matMenuTriggerFor]="setDefault">
+                <img src="../../../../assets/images/expand_more.svg" />
+            </button>
+              <mat-menu #setDefault="matMenu" class="create-order-submenu">
+                <button mat-menu-item>System Reports</button>
+                <button mat-menu-item>Report Builder</button>
+                <button mat-menu-item>Scheduled Reports</button>
+                <button mat-menu-item>Performance Analytics</button>
+              </mat-menu>
+        </div>
+    </div>
+      
+</div>

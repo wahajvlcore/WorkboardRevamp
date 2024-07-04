@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Import variables
+@import '../../../styles/variables';
+
+// Import mixins
+@import '../../../styles/mixins';
+
+span.label-primary-buttons, span.label-secondary-buttons, .label-ghost-buttons{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: $font-size14px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    margin-bottom: 10px;
+  }
+
+  .primary-buttons, .primary-buttons-with-icons{
+    .button {
+      padding: 6px 15px;
+      font-weight: 600;
+      font-family: "Assistant", sans-serif;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: $primary-button-enabled-bg;
+  
+    &.hovered {
+      background-color: $primary-button-hover-bg; // Change background color when hovered
+    }
+  
+    &.pressed {
+      background-color: $primary-button-pressed-bg; // Change background color when pressed
+    }
+  
+    &.disabled {
+      background-color: $primary-button-disabled-bg; // Change background color when disabled
+      cursor: not-allowed; // Change cursor when disabled
+    }
+    
+  }
+  img{
+    width: 15px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  }
+  
+
+  .secondary-buttons, .secondary-buttons-with-icons {
+    .button{
+      padding: 6px 15px;
+      font-weight: 600;
+      font-family: "Assistant", sans-serif;
+      border: none;
+      color: #262626;
+      cursor: pointer;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: $secondary-button-enabled-bg;
+      border:1px solid #262626;
+
+    &.hovered {
+      background-color: $secondary-button-hover-bg; // Change background color when hovered
+      border:1px solid #323239;
+      color: #323239;
+    }
+  
+    &.pressed {
+      background-color: $secondary-button-pressed-bg; // Change background color when pressed
+      border:1px solid #56565D;
+      color: #56565D;
+    }
+  
+    &.disabled {
+      background-color: $secondary-button-disabled-bg; // Change background color when disabled
+      cursor: not-allowed; // Change cursor when disabled
+      border:1px solid #D9D9E0;
+      color: #D9D9E0;
+    }
+
+    img{
+      width: 15px;
+      height: auto;
+      cursor: pointer;
+      &:hover{
+          background-color: $primary-button-disabled-bg;
+      }
+    }
+  }
+  }
+
+  .ghost-buttons .button, .ghost-buttons-with-icons .button {
+    padding: 6px 15px;
+    font-weight: 600;
+    font-family: "Assistant", sans-serif;
+    border: none;
+    color: #262626;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $ghost-button-enabled-bg;
+    border:none;
+  
+    &.hovered {
+      background-color: $ghost-button-hover-bg; // Change background color when hovered
+      color: #323239;
+    }
+  
+    &.pressed {
+      background-color: $ghost-button-pressed-bg; // Change background color when pressed
+      color: #56565D;
+    }
+  
+    &.disabled {
+      background-color: $ghost-button-disabled-bg; // Change background color when disabled
+      cursor: not-allowed; // Change cursor when disabled
+      color: #D9D9E0;
+    }
+  }
+
+.primary-buttons, .secondary-buttons, .ghost-buttons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.primary-buttons-with-icons, .secondary-buttons-with-icons, .ghost-buttons-with-icons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  .button{
+    gap: 5px;
+
+    img{
+      width: 10px;
+      height: auto;
+    }
+  }
+}
+
+
+ ::ng-deep{
+  .mat-mdc-menu-panel.viewCodeMenu{
+    border-radius: 5px;
+    padding: 8px;
+    transform-origin: left top; 
+    background-color: #1C2A35; 
+    color: white;
+    .mat-mdc-menu-content{
+      font-family: "Assistant", sans-serif !important;
+      padding: 0;
+      font-size: 14px;
+    } 
+  }    
+ }

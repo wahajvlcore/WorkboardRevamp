@@ -1,0 +1,2340 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+@import '../../../../styles/grid';
+
+.order-details-tags{
+    background-color: #fff;
+    margin: 0 20px;
+    border-radius: 14px;
+    box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.10);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+
+    .order-tiles-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(220, 220, 220, 0.80);
+        margin:0 20px;
+
+    }
+    .order-tiles{
+        display: flex;
+        align-items: center;
+        gap: if(unitless(20px), 20px, px-to-rem(20px));
+        .all-active{
+            display: flex;
+            align-items: center;
+            padding: 14px 0 17px 0;
+            img{
+                cursor: pointer;
+                &.pin-icon{
+                    margin-right: 5px;
+                    width: if(unitless(12px), 12px, px-to-rem(12px));
+                    height: if(unitless(12px), 12px, px-to-rem(12px));
+                }
+                &.tiles-icon{
+                    margin-right: 5px; 
+                    height: if(unitless(16px), 16px, px-to-rem(16px));
+                    width: if(unitless(16px), 16px, px-to-rem(16px));
+                }
+            }
+            label{
+                cursor: pointer;
+                color: rgba(0, 0, 0, 0.75);
+                font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                font-weight: 400;
+                font-family: $font-Assistant;
+                white-space: nowrap;
+                span{
+                    color: #000000bf;
+                    font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                    font-weight: 600;
+                    font-family: $font-Assistant;
+                }
+            }
+
+        }
+    }
+    .calendar-tags{
+        display: flex;
+        align-items: center;
+        div{
+            font-size: if(unitless(14px), 14px, px-to-rem(14px));
+            font-family: $font-Assistant;
+            white-space: nowrap;
+        }
+        .calender{
+            label{
+                font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                font-family: $font-Assistant;
+                white-space: nowrap;
+            }
+        }
+
+        .order-due-tag{
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            font-size: if(unitless(14px), 14px, px-to-rem(14px));
+            width: if(unitless(20px), 20px, px-to-rem(20px));
+            height: if(unitless(20px), 20px, px-to-rem(20px));
+            border-radius: 50px; 
+            background-color: #FFDCDC;
+            color: #C72828;
+            text-align: center;
+            margin-right: 7px;
+        }
+        .order-due-label{
+            margin-right: 10px;
+        }
+        .client-due-tag{
+            span{
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                width: if(unitless(20px), 20px, px-to-rem(20px));
+                height: if(unitless(20px), 20px, px-to-rem(20px));
+                border-radius: 50px; 
+                background-color: #F4E0DF;
+                color: #733434;
+                text-align: center;
+                margin-right: 7px;
+            }
+        }
+        .client-due-label{
+            margin-right: 10px;
+        }
+        .inspection-scheduled-tag{
+            display:flex;
+            align-items:center;
+            justify-content: center; 
+            font-size: if(unitless(13px), 13px, px-to-rem(13px));
+            width: if(unitless(20px), 20px, px-to-rem(20px));
+            height: if(unitless(20px), 20px, px-to-rem(20px));
+            border-radius: 50px; 
+            background-color: #FFECD0;
+            color: #BB601E;
+            text-align: center;
+            margin-right: 7px;
+        }
+        .inspection-scheduled-label{
+            // margin-right: 10px;
+        }
+        .date-picker{
+            .mat-mdc-icon-button{
+                padding: 0;
+                height: 0;
+                color: #555658;
+                position: relative;
+                margin-right: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: if(unitless(24px), 24px, px-to-rem(24px));
+                height: if(unitless(24px), 24px, px-to-rem(24px));
+                mat-icon{
+                    width: 0px;
+                    height: 0px;
+                    &::after{
+                        content: url('../../../../assets/images/expandmore_black.svg');
+                        width: if(unitless(24px), 24px, px-to-rem(24px));
+                        height: if(unitless(24px), 24px, px-to-rem(24px));
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        color: #000;
+                        filter: (#555658);
+                        left: 22px;
+                        bottom: 6px;
+                    }
+                    &::before{
+                        content: url('../../../../assets/images/date_range.svg');
+                        width: if(unitless(24px), 24px, px-to-rem(24px));
+                        height: if(unitless(24px), 24px, px-to-rem(24px));
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        color: #000;
+                        filter: (#555658);
+                        left: 5px;
+                        bottom: 2px;
+                    }
+                }
+                
+            }
+        }
+    }
+    .sort-and-filters{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: if(unitless(10px), 10px, px-to-rem(10px));
+        margin-bottom: if(unitless(10px), 10px, px-to-rem(10px));
+        margin-right: if(unitless(20px), 20px, px-to-rem(20px));
+        .sorting-buttons-align{
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 25px;
+            }
+            button{
+                &:not(:last-child) {
+                    margin-right: if(unitless(10px), 10px, px-to-rem(10px));
+                }
+                img{
+                    margin-right:if(unitless(5px), 5px, px-to-rem(5px));
+                }
+            &.mdc-button{
+                @include primary-button-styles;
+                ::ng-deep{
+                    .mdc-button__label{
+                        @include primary-button-label-styles
+                    }
+                }
+            }
+        }
+        }
+
+    }
+
+    .order-details-body{
+        display: flex;
+        .drawer{
+            position: relative;
+            width: if(unitless(332px), 332px, px-to-rem(332px));
+            // height: 100%;
+            // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            &.collapsed{
+                transform: translateX(-100%);
+                .toggle-button {
+                    right: -20px;
+                }
+            }
+            .status-panel-header{
+                display: flex;
+                align-items: center; 
+                height: if(unitless(46px), 46px, px-to-rem(46px)); 
+                padding-left: 20px;
+                border-top: 1px solid rgba(220, 220, 220, 0.80);
+                border-bottom: 1px solid rgba(220, 220, 220, 0.80);
+                background: #F7F7F9;
+                label{
+                    color: rgba(0, 0, 0, 0.65); 
+                    font-family: $font-Assistant;
+                    font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                    font-style: normal; 
+                    font-weight: 600; 
+                    line-height: normal;
+                }
+            }
+            .toggle-button {
+                position: absolute;
+                top: 8px;
+                right: -15px;
+                padding: 5px 9px;
+                background-color: #fff;
+                border: 1px solid rgba(220, 220, 220, 0.80);
+                color: white;
+                cursor: pointer;
+                border-radius: 200px;
+                transition: right 0.3s ease;
+                z-index: 999;
+                &:hover {
+                    background-color: #D8DDE1;
+                }                
+                .rotate180{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        
+        .content{
+            flex: 1;
+            transition: margin-left 0.3s ease;
+            &.collapsed{
+                margin-left: -333px;
+            }
+            .order-grid{
+                ::ng-deep{
+                    .mat-mdc-table{
+                        width: 100%;
+                        &.order-information-grid{
+                            .mat-mdc-checkbox{
+                                transform: scale(0.9);
+                                &:active {
+                                    .mdc-checkbox__native-control {
+                                        &:checked {
+                                            ~ .mdc-checkbox__ripple {
+                                                background-color: #525260;
+                                            }
+                                        }
+                                    }
+                                }
+                                &:not(:disabled) {
+                                    &:active {
+                                        .mdc-checkbox__native-control {
+                                            &:enabled {
+                                                &:checked {
+                                                    ~ .mdc-checkbox__background {
+                                                        border-color: #525260;
+                                                        background-color: #525260;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                    .mdc-checkbox__native-control {
+                                        &:enabled {
+                                            &:checked {
+                                                & ~ .mdc-checkbox__background {
+                                                    border-color: #525260;
+                                                    background-color: #525260;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .mdc-checkbox__native-control {
+                                        &:focus {
+                                            &:checked {
+                                                & ~ .mdc-checkbox__ripple {
+                                                    background-color: #525260;
+                                                }
+                                            }
+                                        }
+                                    } 
+                            }
+                            tbody{
+                                &.mdc-data-table__content{
+                                    .mat-mdc-row{
+                                        .mat-mdc-cell{
+                                            .align-checkbox-body{
+                                                display: flex;
+                                                align-items: center;
+                                                flex-direction: column;
+                                            }
+                                            img{
+                                                &.flagged-order{
+                                                    opacity: 0;
+                                                    transition: opacity 0.3s ease-in-out;
+                                                }
+                                                &.escalation-order{
+                                                    opacity: 0;
+                                                    transition: opacity 0.3s ease-in-out;
+                                                }
+                                            }
+                                            .order-information{
+                                                img{
+                                                    &.copy-order-number{
+                                                        opacity: 0;
+                                                        transition: opacity 0.3s ease-in-out;
+                                                    }
+                                                    &.unread-comments{
+                                                        opacity: 0;
+                                                        transition: opacity 0.3s ease-in-out;
+                                                    }
+                                                    &.upload{
+                                                        opacity: 0;
+                                                        transition: opacity 0.3s ease-in-out;
+                                                    }
+                                                }
+                                                .order-type{
+                                                    opacity: 0;
+                                                    transition: opacity 0.3s ease-in-out;
+                                                }
+                                            }
+                                            .order-information{
+                                                line-height: 20px;
+                                                .order-details-cell{
+                                                    display: flex;
+                                                    align-items: center;
+                                                    margin-bottom: 6px;
+                                                    .order-number{
+                                                        cursor: pointer; 
+                                                        color: rgba(0, 0, 0, 0.85); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(16px), 16px, px-to-rem(16px));
+                                                        font-style: normal; 
+                                                        font-weight: 600; 
+                                                        line-height: normal; 
+                                                        text-decoration-line: underline;
+                                                    }
+                                                    img{
+                                                        &.copy-order-number{
+                                                            cursor:pointer; 
+                                                            margin-left: 3px;
+                                                            width: if(unitless(19px), 19px, px-to-rem(19px));
+                                                        }
+                                                        &.unread-comments{
+                                                            margin-left: 9px;
+                                                            width: if(unitless(17px), 17px, px-to-rem(17px));
+                                                            cursor: pointer;
+                                                        }
+                                                        &.upload{
+                                                            margin-left: 9px;
+                                                            cursor: pointer;
+                                                        }
+                                                    }
+                                                    .order-type{
+                                                        font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                                                        color:#ffffff; 
+                                                        background: linear-gradient(0deg, #EA7272 0%, #EA7272 100%), #EFF2F5;
+                                                        border-radius: 50px;
+                                                        padding: 1px 7px;
+                                                        margin-left: 4px;
+                                                        font-family: $font-Assistant;
+                                                    }
+                                                }
+                                                .order-address{
+                                                    display: flex;
+                                                    align-items: center;
+                                                    gap:5px;
+                                                    color: #000; 
+                                                    font-family: $font-Assistant; 
+                                                    font-size: if(unitless(14px), 14px, px-to-rem(14px)); 
+                                                    font-style: normal; 
+                                                    font-weight: 400; 
+                                                    line-height: normal;
+                                                }
+                                                .order-county{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px)); 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .order-loan-number{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+
+                                                    .tags{
+                                                        display: flex;
+                                                        align-items: center;
+                                                        gap: 10px;
+                                                        margin-top: 2px;
+                                                        .tag-label{
+                                                            display: flex;
+                                                            align-items: center; 
+                                                            padding: 2px 6px;
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(12px), 12px, px-to-rem(12px));  
+                                                            font-style: normal; 
+                                                            font-weight: 600; 
+                                                            line-height: normal; 
+                                                            letter-spacing: 0.2px; 
+                                                            text-transform: uppercase;
+                                                            overflow: hidden;
+                                                            &.urgent{
+                                                                background: linear-gradient(0deg, rgba(252, 212, 214, 0.50) 0%, rgba(252, 212, 214, 0.50) 100%), #EFF2F5;
+                                                            }
+                                                            &.fully-paid{
+                                                                background: linear-gradient(0deg, rgba(191, 231, 238, 0.50) 0%, rgba(191, 231, 238, 0.50) 100%), #EFF2F5;
+                                                            }
+                                                            img{
+                                                                margin-left: 5px; 
+                                                                height: if(unitless(10px), 10px, px-to-rem(10px)); 
+                                                            }
+                                                        }
+                                                            
+                                                    }
+                                                }
+                                            }
+                                            .order-client-details{
+                                                line-height: 20px;
+                                                .order-client{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px)); 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .order-branch{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .wholesale-lender{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px)); 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .orderby{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                            }
+                                            .other-infomation{
+                                                line-height: 20px;
+                                                .order-status{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .borrower{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .order-vendor{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .order-reviewer{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .assign-staff-member{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px)); 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                            }
+                                            .fee-cell{
+                                                line-height:20px;
+                                                .order-fee
+                                                {
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .net-vendor-fee{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .reviewer-fee{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .product{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .payment-status{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        background: linear-gradient(0deg, #E1F9E1 0%, #E1F9E1 100%), #EFF2F5;
+                                                        color: #2F8F3F;
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px)); 
+                                                        font-style: normal;
+                                                        font-weight: 600;
+                                                        padding: 2px 8px;
+                                                        border-radius: 40px;
+                                                    }
+                                                }
+                                            }
+                                            .due-dates{
+                                                line-height:20px;
+                                                .created-date
+                                                {
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(14px), 14px, px-to-rem(14px));  
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .vendor-assigned{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .vendor-accepted{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .inspection-scheduled{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .client-due{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .vendor-due{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                            }
+                                            .other-dates{
+                                                line-height:20px;
+                                                .submitted-date{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .reviewed-date{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant;  
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .completed-date{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .updated-date{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                                .days-open{
+                                                    span{
+                                                        color: rgba(0, 0, 0, 0.75); 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+
+                                                    }
+                                                    label{
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: 14px; 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &:hover{
+                                            background-color: #FAFAFA;
+                                                .mat-mdc-cell{
+                                                    img{
+                                                        &.flagged-order{
+                                                            opacity: 1;
+                                                        }
+                                                        &.escalation-order{
+                                                            opacity: 1;
+                                                        }
+                                                    }
+                                                    .order-information{
+                                                        img{
+                                                            &.copy-order-number{
+                                                                opacity: 1;
+                                                            }
+                                                            &.unread-comments{
+                                                                opacity: 1;
+                                                            }
+                                                            &.upload{
+                                                                opacity: 1;
+                                                            }
+                            
+                                                        }
+                                                        .order-type{
+                                                            opacity: 1;
+                                                        }
+                                                    }
+                                                }
+                                        }
+                                    }
+                                }
+                            }
+                            thead{
+                                background: #F7F7F9 !important;
+                                .mat-mdc-header-cell{
+                                    color: rgba(0, 0, 0, 0.65);
+                                    font-family: Assistant;
+                                    font-size: 14px;
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    line-height: normal;
+                                    &:first-child{
+                                        text-align: center;
+                                        padding-right: 0;
+                                    }
+                    
+                                }
+                            }
+                        }
+                      
+                    }
+                }
+            }
+        }
+    }
+}
+
+// // .example-sidenav-content button{
+// //     border: 1px solid rgba(220, 220, 220, 0.80);
+// //     border-radius: 50px;
+// //     width: 28px;
+// //     height: 28px;
+// //     min-width: 28px;
+// //     float: right;
+// //     ::ng-deep{
+// //         .mdc-button__label{
+// //             display: flex;
+// //             align-items: center;
+// //         }
+// //     }   
+// // }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    // padding: 8px;
+    padding: 0;
+    text-align: left;
+}
+td{
+    padding: 8px 0;
+    text-align: left;    
+}
+
+::ng-deep{
+    .order-information-grid{
+        thead{
+            display: table !important;
+            width: 100% !important;
+            table-layout: fixed !important;
+        }
+        tbody{
+            display: block;
+            overflow: auto;
+            height: 570px;
+            tr{
+                display: table !important;
+                width: 100% !important;
+                table-layout: fixed !important;
+            }
+        }
+       
+    }
+
+    .mdc-data-table__content::-webkit-scrollbar-track {
+        background: #ffffff00 !important;
+    }
+   
+    .mdc-data-table__content::-webkit-scrollbar-thumb {
+        background-color: #ffffff00 !important;
+        border-radius: 12px;
+    }
+   
+    .mdc-data-table__content::-webkit-scrollbar {
+        background: #ffffff00 !important;
+        width: 8px;
+    }
+   
+    .mdc-data-table__content:hover::-webkit-scrollbar-track {
+        background: #eaeaea00 !important;
+    }
+   
+    .mdc-data-table__content:hover::-webkit-scrollbar-thumb {
+        background-color: #ddd !important;
+    }
+   
+    .mdc-data-table__content:hover::-webkit-scrollbar {
+        background: #ffffff00 !important;
+        width: 8px;
+        z-index: 9999999;
+    }
+  
+    // .order-grid{
+    //     overflow-y: overlay;
+    //     height: 400px;
+    // }
+    // .order-grid::-webkit-scrollbar {
+    //     width: 1em;
+    //   }
+       
+    //   .order-grid::-webkit-scrollbar-track {
+    //     // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    //     background-color: transparent;
+    //   }
+       
+    //   .order-grid::-webkit-scrollbar-thumb {
+    //     background-color: #DDD;
+    //     outline: 1px solid #DDD;
+    //   }
+    .mat-mdc-menu-panel{
+    &.create-order-submenu{
+        padding: 0px;
+        min-width: 10rem;
+      }
+    }
+    
+    .mdc-data-table__content{
+        font-family: $font-Assistant !important;
+        border-left: 1px solid rgba(220, 220, 220, 0.80);
+    }
+    .mat-mdc-header-row, .mat-mdc-row{
+        font-family: $font-Assistant !important;
+    }
+    .mat-mdc-header-row{
+        height: 45px !important;
+        border: 1px solid rgba(220, 220, 220, 0.80);
+        border-right:none;
+
+    }
+    .mat-calendar-header{
+        .mat-calendar-period-button{
+            .mdc-button__label{
+                color: #000000d9;
+            }
+        }
+    }
+    .applied-tags-menu{
+        &.mat-mdc-menu-panel{
+            min-width: 140px;
+            max-width: 140px;
+            padding: 5px;
+        }
+        .mat-mdc-menu-content{
+            padding: 0;
+        }
+        span{
+            display: inline-flex;
+            align-items: center; 
+            padding: 2px 6px;
+            background: linear-gradient(0deg, rgba(191, 231, 238, 0.50) 0%, rgba(191, 231, 238, 0.50) 100%), #EFF2F5; 
+            color: var(--Gray-Dark, #464648); 
+            font-family: $font-Assistant; 
+            font-size: 12px; 
+            font-style: normal; 
+            font-weight: 600; 
+            line-height: normal; 
+            letter-spacing: 0.2px; 
+            text-transform: uppercase;
+            margin-bottom:4px
+            img{
+                margin-left: 5px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+
+  th.mat-header-cell {
+    font-weight: bold;
+  }
+  
+  td.mat-cell {
+    padding: 8px;
+  }
+  
+
+  .added-tags {
+
+    .mat-mdc-menu-trigger{
+        border-radius: 4px;
+        background: #E3E3E2;
+        min-width: 25px;
+        height: 18px;
+        max-width: 25px;
+        ::ng-deep{
+          .mdc-button__label{
+            color: #464648;
+            text-align: center;
+            font-family: Assistant;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 0.24px;
+            text-transform: uppercase;
+          }
+        }
+      }
+  }
+
+  .order-statuses-panel{
+    ul{
+        list-style-type: none;
+        padding: 0px;
+        margin: 0;
+        margin-top: 8px;
+        li{
+            color: #1D1D1F;
+            font-family: $font-Assistant;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            cursor: pointer;
+            padding-bottom: 10px;
+            padding-top: 8px;
+            padding-left: 20px;
+            &:hover{
+                background-color: #FAFAFA;
+            }
+        }
+       
+    }
+  }
+
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  
+  .page-item {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .page-item.disabled .page-link {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  
+  .page-item.active .page-link {
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 10px;
+    cursor: text;
+  }
+  
+
+
+
+  th:first-child, td:first-child {
+    width: 4%;
+}
+th:nth-child(2), td:nth-child(2) {
+    width: 20%;
+}
+th:nth-child(3), td:nth-child(3) {
+    width: 20%;
+}
+th:nth-child(4), td:nth-child(4) {
+    width: 16%;
+}
+th:nth-child(5), td:nth-child(5) {
+    width: 15%;
+}
+th:nth-child(6), td:nth-child(6) {
+    width: 15%;
+}
+th:last-child, td:last-child {
+    width: 10%;
+}
+
+
+@media (max-width: 1536px) {
+    
+
+    .order-statuses-panel{
+        ul{
+            li{
+                font-size: 14px;
+            }
+        }
+    }
+
+
+    .order-details-tags{
+    
+        .order-tiles-row{
+    
+        }
+        .order-tiles{
+            display: flex;
+            align-items: center;
+            gap: if(unitless(13px), 13px, px-to-rem(13px));
+            .all-active{
+                display: flex;
+                align-items: center;
+                padding: 14px 0 17px 0;
+                img{
+                    cursor: pointer;
+                    &.pin-icon{
+                        margin-right: 5px;
+                        width: if(unitless(10px), 10px, px-to-rem(10px));
+                        height: if(unitless(10px), 10px, px-to-rem(10px));
+                    }
+                    &.tiles-icon{
+                        margin-right: 5px; 
+                        height: if(unitless(14px), 14px, px-to-rem(14px));
+                        width: if(unitless(14px), 14px, px-to-rem(14px));
+                    }
+                }
+                label{
+                    cursor: pointer;
+                    color: rgba(0, 0, 0, 0.75);
+                    font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                    font-weight: 400;
+                    font-family: $font-Assistant;
+                    white-space: nowrap;
+                    span{
+                        color: #000000bf;
+                        font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                        font-weight: 600;
+                        font-family: $font-Assistant;
+                    }
+                }
+    
+            }
+        }
+        .calendar-tags{
+            display: flex;
+            align-items: center;
+            div{
+                font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                font-family: $font-Assistant;
+                white-space: nowrap;
+            }
+            .calender{
+                label{
+                    font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                    font-family: $font-Assistant;
+                    white-space: nowrap;
+                }
+            }
+    
+            .order-due-tag{
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                width: if(unitless(20px), 20px, px-to-rem(20px));
+                height: if(unitless(20px), 20px, px-to-rem(20px));
+                border-radius: 50px; 
+                background-color: #FFDCDC;
+                color: #C72828;
+                text-align: center;
+                margin-right: 7px;
+            }
+            .order-due-label{
+                margin-right: 10px;
+            }
+            .client-due-tag{
+                span{
+                    display:flex;
+                    align-items:center;
+                    justify-content: center;
+                    font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                    width: if(unitless(20px), 20px, px-to-rem(20px));
+                    height: if(unitless(20px), 20px, px-to-rem(20px));
+                    border-radius: 50px; 
+                    background-color: #F4E0DF;
+                    color: #733434;
+                    text-align: center;
+                    margin-right: 7px;
+                }
+            }
+            .client-due-label{
+                margin-right: 10px;
+            }
+            .inspection-scheduled-tag{
+                display:flex;
+                align-items:center;
+                justify-content: center; 
+                font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                width: if(unitless(20px), 20px, px-to-rem(20px));
+                height: if(unitless(20px), 20px, px-to-rem(20px));
+                border-radius: 50px; 
+                background-color: #FFECD0;
+                color: #BB601E;
+                text-align: center;
+                margin-right: 7px;
+            }
+            .inspection-scheduled-label{
+                // margin-right: 10px;
+            }
+            .date-picker{
+                .mat-mdc-icon-button{
+                    padding: 0;
+                    height: 0;
+                    color: #555658;
+                    position: relative;
+                    margin-right: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: if(unitless(24px), 24px, px-to-rem(24px));
+                    height: if(unitless(24px), 24px, px-to-rem(24px));
+                    mat-icon{
+                        width: 0px;
+                        height: 0px;
+                        &::after{
+                            content: url('../../../../assets/images/expandmore_black.svg');
+                            width: if(unitless(24px), 24px, px-to-rem(24px));
+                            height: if(unitless(24px), 24px, px-to-rem(24px));
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            color: #000;
+                            filter: (#555658);
+                            left: 22px;
+                            bottom: 6px;
+                        }
+                        &::before{
+                            content: url('../../../../assets/images/date_range.svg');
+                            width: if(unitless(24px), 24px, px-to-rem(24px));
+                            height: if(unitless(24px), 24px, px-to-rem(24px));
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            color: #000;
+                            filter: (#555658);
+                            left: 5px;
+                            bottom: 2px;
+                            transform: scale(0.9);
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .sort-and-filters{
+            display: flex;
+            justify-content: flex-end;
+            margin-top: if(unitless(10px), 10px, px-to-rem(10px));
+            margin-bottom: if(unitless(10px), 10px, px-to-rem(10px));
+            margin-right: if(unitless(20px), 20px, px-to-rem(20px));
+            .sorting-buttons-align{
+                display: flex;
+                align-items: center;
+                img{
+                    margin-right: 25px;
+                }
+                button{
+                    &:not(:last-child) {
+                        margin-right: if(unitless(10px), 10px, px-to-rem(10px));
+                    }
+                    img{
+                        margin-right:if(unitless(5px), 5px, px-to-rem(5px));
+                    }
+                &.mdc-button{
+                        border-radius: 4px;
+                        border: 1px solid $primary-border-color;
+                        background-color: $white;
+                        height: if(unitless(25px), 25px, px-to-rem(25px));
+                        // width: 81px;
+                        padding: 5px 15px;
+                    ::ng-deep{
+                        .mdc-button__label{
+                            color: $button-text-color;
+                            font-family: $font-Assistant;
+                            font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+            }
+    
+        }
+    
+        .order-details-body{
+            display: flex;
+            .drawer{
+                position: relative;
+                width: if(unitless(285px), 285px, px-to-rem(285px));
+                // height: 100%;
+                // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                &.collapsed{
+                    transform: translateX(-100%);
+                    .toggle-button {
+                        right: -20px;
+                    }
+                }
+                .status-panel-header{
+                    display: flex;
+                    align-items: center; 
+                    height: if(unitless(46px), 46px, px-to-rem(46px)); 
+                    padding-left: 20px;
+                    border-top: 1px solid rgba(220, 220, 220, 0.80);
+                    border-bottom: 1px solid rgba(220, 220, 220, 0.80);
+                    background: #F7F7F9;
+                    label{
+                        color: rgba(0, 0, 0, 0.65); 
+                        font-family: $font-Assistant;
+                        font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                        font-style: normal; 
+                        font-weight: 600; 
+                        line-height: normal;
+                    }
+                }
+                .toggle-button {
+                    position: absolute;
+                    top: 8px;
+                    right: -15px;
+                    padding: 5px 9px;
+                    background-color: #fff;
+                    border: 1px solid rgba(220, 220, 220, 0.80);
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 200px;
+                    transition: right 0.3s ease;
+                    z-index: 999;
+                    &:hover {
+                        background-color: #D8DDE1;
+                    }                
+                    .rotate180{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            
+            .content{
+                flex: 1;
+                transition: margin-left 0.3s ease;
+                &.collapsed{
+                    margin-left: -285px;
+                }
+                .order-grid{
+                    ::ng-deep{
+                        .mat-mdc-table{
+                            width: 100%;
+                            &.order-information-grid{
+                                .mat-mdc-checkbox{
+                                    transform: scale(0.9);
+                                    &:active {
+                                        .mdc-checkbox__native-control {
+                                            &:checked {
+                                                ~ .mdc-checkbox__ripple {
+                                                    background-color: #525260;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:not(:disabled) {
+                                        &:active {
+                                            .mdc-checkbox__native-control {
+                                                &:enabled {
+                                                    &:checked {
+                                                        ~ .mdc-checkbox__background {
+                                                            border-color: #525260;
+                                                            background-color: #525260;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                        .mdc-checkbox__native-control {
+                                            &:enabled {
+                                                &:checked {
+                                                    & ~ .mdc-checkbox__background {
+                                                        border-color: #525260;
+                                                        background-color: #525260;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .mdc-checkbox__native-control {
+                                            &:focus {
+                                                &:checked {
+                                                    & ~ .mdc-checkbox__ripple {
+                                                        background-color: #525260;
+                                                    }
+                                                }
+                                            }
+                                        } 
+                                }
+                                tbody{
+                                    &.mdc-data-table__content{
+                                        .mat-mdc-row{
+                                            .mat-mdc-cell{
+                                                .align-checkbox-body{
+                                                    display: flex;
+                                                    align-items: center;
+                                                    flex-direction: column;
+                                                }
+                                                img{
+                                                    &.flagged-order{
+                                                        opacity: 0;
+                                                        transition: opacity 0.3s ease-in-out;
+                                                    }
+                                                    &.escalation-order{
+                                                        opacity: 0;
+                                                        transition: opacity 0.3s ease-in-out;
+                                                    }
+                                                }
+                                                .order-information{
+                                                    img{
+                                                        &.copy-order-number{
+                                                            opacity: 0;
+                                                            transition: opacity 0.3s ease-in-out;
+                                                        }
+                                                        &.unread-comments{
+                                                            opacity: 0;
+                                                            transition: opacity 0.3s ease-in-out;
+                                                        }
+                                                        &.upload{
+                                                            opacity: 0;
+                                                            transition: opacity 0.3s ease-in-out;
+                                                        }
+                                                    }
+                                                    .order-type{
+                                                        opacity: 0;
+                                                        transition: opacity 0.3s ease-in-out;
+                                                    }
+                                                }
+                                                .order-information{
+                                                    line-height: 20px;
+                                                    .order-details-cell{
+                                                        display: flex;
+                                                        align-items: center;
+                                                        margin-bottom: 6px;
+                                                        .order-number{
+                                                            cursor: pointer; 
+                                                            color: rgba(0, 0, 0, 0.85); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                                                            font-style: normal; 
+                                                            font-weight: 600; 
+                                                            line-height: normal; 
+                                                            text-decoration-line: underline;
+                                                        }
+                                                        img{
+                                                            &.copy-order-number{
+                                                                cursor:pointer; 
+                                                                margin-left: 3px;
+                                                                width: if(unitless(19px), 19px, px-to-rem(19px));
+                                                            }
+                                                            &.unread-comments{
+                                                                margin-left: 9px;
+                                                                width: if(unitless(17px), 17px, px-to-rem(17px));
+                                                                cursor: pointer;
+                                                            }
+                                                            &.upload{
+                                                                margin-left: 9px;
+                                                                cursor: pointer;
+                                                            }
+                                                        }
+                                                        .order-type{
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));
+                                                            color:#ffffff; 
+                                                            background: linear-gradient(0deg, #EA7272 0%, #EA7272 100%), #EFF2F5;
+                                                            border-radius: 50px;
+                                                            padding: 1px 7px;
+                                                            margin-left: 4px;
+                                                            font-family: $font-Assistant;
+                                                        }
+                                                    }
+                                                    .order-address{
+                                                        display: flex;
+                                                        align-items: center;
+                                                        gap:5px;
+                                                        color: #000; 
+                                                        font-family: $font-Assistant; 
+                                                        font-size: if(unitless(13px), 13px, px-to-rem(13px)); 
+                                                        font-style: normal; 
+                                                        font-weight: 400; 
+                                                        line-height: normal;
+                                                    }
+                                                    .order-county{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px)); 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .order-loan-number{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+    
+                                                        .tags{
+                                                            display: flex;
+                                                            align-items: center;
+                                                            gap: 10px;
+                                                            margin-top: 2px;
+                                                            .tag-label{
+                                                                display: flex;
+                                                                align-items: center; 
+                                                                padding: 2px 6px;
+                                                                font-family: $font-Assistant; 
+                                                                font-size: if(unitless(12px), 12px, px-to-rem(12px));  
+                                                                font-style: normal; 
+                                                                font-weight: 600; 
+                                                                line-height: normal; 
+                                                                letter-spacing: 0.2px; 
+                                                                text-transform: uppercase;
+                                                                overflow: hidden;
+                                                                &.urgent{
+                                                                    background: linear-gradient(0deg, rgba(252, 212, 214, 0.50) 0%, rgba(252, 212, 214, 0.50) 100%), #EFF2F5;
+                                                                }
+                                                                &.fully-paid{
+                                                                    background: linear-gradient(0deg, rgba(191, 231, 238, 0.50) 0%, rgba(191, 231, 238, 0.50) 100%), #EFF2F5;
+                                                                }
+                                                                img{
+                                                                    margin-left: 5px; 
+                                                                    height: if(unitless(10px), 10px, px-to-rem(10px)); 
+                                                                }
+                                                            }
+                                                                
+                                                        }
+                                                    }
+                                                }
+                                                .order-client-details{
+                                                    line-height: 20px;
+                                                    .order-client{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px)); 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .order-branch{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .wholesale-lender{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px)); 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .orderby{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                }
+                                                .other-information{
+                                                    line-height: 20px;
+                                                    .order-status{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .borrower{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .order-vendor{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .order-reviewer{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .assign-staff-member{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px)); 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                }
+                                                .fee-cell{
+                                                    line-height:20px;
+                                                    .order-fee
+                                                    {
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .net-vendor-fee{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .reviewer-fee{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .product{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .payment-status{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            background: linear-gradient(0deg, #E1F9E1 0%, #E1F9E1 100%), #EFF2F5;
+                                                            color: #2F8F3F;
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px)); 
+                                                            font-style: normal;
+                                                            font-weight: 600;
+                                                            padding: 2px 8px;
+                                                            border-radius: 40px;
+                                                        }
+                                                    }
+                                                }
+                                                .due-dates{
+                                                    line-height:20px;
+                                                    .created-date
+                                                    {
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: if(unitless(13px), 13px, px-to-rem(13px));  
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .vendor-assigned{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .vendor-accepted{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .inspection-scheduled{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .client-due{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .vendor-due{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                }
+                                                .other-dates{
+                                                    line-height:20px;
+                                                    .submitted-date{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .reviewed-date{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant;  
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .completed-date{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .updated-date{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                    .days-open{
+                                                        span{
+                                                            color: rgba(0, 0, 0, 0.75); 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+    
+                                                        }
+                                                        label{
+                                                            color: #000; 
+                                                            font-family: $font-Assistant; 
+                                                            font-size: 13px; 
+                                                            font-style: normal; 
+                                                            font-weight: 400; 
+                                                            line-height: normal;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &:hover{
+                                                background-color: #FAFAFA;
+                                                    .mat-mdc-cell{
+                                                        img{
+                                                            &.flagged-order{
+                                                                opacity: 1;
+                                                            }
+                                                            &.escalation-order{
+                                                                opacity: 1;
+                                                            }
+                                                        }
+                                                        .order-information{
+                                                            img{
+                                                                &.copy-order-number{
+                                                                    opacity: 1;
+                                                                }
+                                                                &.unread-comments{
+                                                                    opacity: 1;
+                                                                }
+                                                                &.upload{
+                                                                    opacity: 1;
+                                                                }
+                                
+                                                            }
+                                                            .order-type{
+                                                                opacity: 1;
+                                                            }
+                                                        }
+                                                    }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                          
+                        }
+                        .mat-mdc-paginator{
+                            font-size: 14px;
+                            .mat-mdc-paginator-outer-container{
+                                .mat-mdc-text-field-wrapper{
+                                    height: 26px;
+                                    &.mdc-text-field--outlined {
+                                        .mat-mdc-form-field-infix{
+                                            padding-top: 1px;
+                                            padding-bottom: 1px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ::ng-deep{
+        .order-information-grid{
+            thead{
+                display: table !important;
+                width: 100% !important;
+                table-layout: fixed !important;
+            }
+            tbody{
+                display: block;
+                overflow: auto;
+                height: 380px;
+                tr{
+                    display: table !important;
+                    width: 100% !important;
+                    table-layout: fixed !important;
+                }
+            }
+           
+        }
+    }
+  }

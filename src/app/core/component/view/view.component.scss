@@ -1,0 +1,312 @@
+@import '../../../../styles/mixins';
+
+@import '../../../../styles/variables';
+
+::ng-deep {
+    .views-teams-config {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: if(unitless(25px), 25px, px-to-rem(25px)) if(unitless(20px), 20px, px-to-rem(20px)) if(unitless(15px), 15px, px-to-rem(15px));
+
+        .main-views-wrapper {
+            display: flex;
+            align-items: center;
+
+            .logged-user {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .user-initials {
+                    border-radius: 50px;
+                    width: if(unitless(29px), 29px, px-to-rem(29px));
+                    height: if(unitless(29px), 29px, px-to-rem(29px));
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #4A967B;
+                    background-color: #c7ebd9;
+                    font-weight: 700;
+                    font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                }
+
+                .welcome-text {
+                    color: #464648;
+                    font-family: $font-Assistant;
+                    font-size: if(unitless(18px), 18px, px-to-rem(18px));
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    position: relative;
+                    padding-right: if(unitless(20px), 20px, px-to-rem(20px));
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0px;
+                        border-right: 1px solid #B1B3B5;
+                        height: if(unitless(28px), 28px, px-to-rem(28px));
+                    }
+                }
+            }
+
+            .views-wrapper {
+                .select-views {
+                    .add-views-button {
+                        min-width: if(unitless(30px), 30px, px-to-rem(30px));
+                        height: if(unitless(30px), 30px, px-to-rem(30px));
+                        background-color: #D8DDE1;
+                    }
+
+                    .mat-mdc-button:last-child {
+                        margin-left: if(unitless(25px), 25px, px-to-rem(25px));
+                    }
+
+                    .mat-mdc-button:not(:last-child) {
+                        margin: 0 if(unitless(35px), 35px, px-to-rem(35px)) 0 if(unitless(35px), 35px, px-to-rem(35px));
+
+                        .mdc-button__label {
+                            color: #262626;
+                            font-family: $font-Assistant;
+                            font-size: if(unitless(15px), 15px, px-to-rem(15px));
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            display: flex;
+                            align-items: center;
+                            gap: if(unitless(8px), 8px, px-to-rem(8px));
+
+                            img {
+                                width: if(unitless(12px), 12px, px-to-rem(12px));
+                                height: if(unitless(12px), 12px, px-to-rem(12px));
+                                margin-right: if(unitless(4px), 4px, px-to-rem(4px));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .teams-configuration {
+            display: flex;
+            align-items: center;
+
+            .select-teams-dropdown {
+                display: flex;
+                align-items: center;
+                margin-right: if(unitless(15px), 15px, px-to-rem(15px));
+
+                .mat-mdc-form-field {
+                    max-height: if(unitless(30px), 30px, px-to-rem(30px));
+
+                    &.mat-focused {
+                        .mat-mdc-text-field-wrapper {
+                            border: 1px solid #B1B3B5;
+                            border-radius: 4px;
+                            border-right: 0;
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;
+                            background-color: #fff;
+
+                            .mat-mdc-form-field-focus-overlay {
+                                opacity: 0;
+                            }
+
+                            .mat-mdc-form-field-flex {
+                                .mat-mdc-form-field-infix {
+                                    padding-top: if(unitless(20px), 20px, px-to-rem(20px));
+
+                                    .mdc-floating-label {
+                                        display: none;
+                                    }
+
+                                    .mat-mdc-select {
+                                        .mat-mdc-select-trigger {
+                                            .mat-mdc-select-arrow-wrapper {
+                                                .mat-mdc-select-arrow {
+                                                    svg {
+                                                        transform: translate(-50%, -30%);
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .mat-mdc-select-value {
+                                            font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                                            font-style: normal;
+                                            font-weight: 600;
+                                            line-height: normal;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:not(.mat-focused) {
+                        .mat-mdc-text-field-wrapper {
+                            border: 1px solid #B1B3B5;
+                            border-radius: 4px;
+                            border-right: 0;
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;
+                            background-color: #fff;
+
+                            .mat-mdc-form-field-focus-overlay {
+                                opacity: 0;
+                            }
+
+                            .mat-mdc-form-field-flex {
+                                .mat-mdc-form-field-infix {
+                                    padding-top: if(unitless(20px), 20px, px-to-rem(20px));
+
+                                    .mdc-floating-label {
+                                        display: none;
+                                    }
+
+                                    .mat-mdc-select {
+                                        &.mat-mdc-select-empty {
+                                            .mat-mdc-select-trigger {
+                                                .mat-mdc-select-arrow-wrapper {
+                                                    .mat-mdc-select-arrow {
+                                                        svg {
+                                                            transform: translate(-50%, -88%);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        &:not(.mat-mdc-select-empty) {
+                                            .mat-mdc-select-trigger {
+                                                .mat-mdc-select-arrow-wrapper {
+                                                    .mat-mdc-select-arrow {
+                                                        svg {
+                                                            transform: translate(-50%, -30%);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .mat-mdc-select-value {
+                                            font-size: 14px;
+                                            font-style: normal;
+                                            font-weight: 600;
+                                            line-height: normal;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .mdc-line-ripple {
+                        &::before {
+                            border: none;
+                        }
+
+                        &::after {
+                            border: none;
+                        }
+                    }
+                }
+
+                .mat-mdc-form-field-subscript-wrapper {
+                    height: 0;
+                    line-height: 0;
+                }
+                
+            .mat-mdc-button {
+              min-width: if(unitless(30px), 30px, px-to-rem(30px));
+              width: if(unitless(30px), 30px, px-to-rem(30px));
+              height: if(unitless(30px), 30px, px-to-rem(30px));
+              border: 1px solid #B1B3B5;
+              background-color: $white;
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+          }
+            }
+
+            .set-default{
+              min-height: if(unitless(28px), 28px, px-to-rem(28px));
+              border: 1px solid #B1B3B5;
+              border-radius: 4px;
+
+              label{
+                color: #1D1D1F;
+                font-family: $font-Assistant;
+                font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                padding: 0 if(unitless(12px), 12px, px-to-rem(12px));
+              }
+              .mat-mdc-button{
+                min-width: if(unitless(30px), 30px, px-to-rem(30px));
+                min-height: if(unitless(28px), 28px, px-to-rem(28px));
+                height: if(unitless(28px), 28px, px-to-rem(28px));
+                border-left: 1px solid #B1B3B5;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                .mdc-button__label{
+                  font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                  font-family: $font-Assistant;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  img{
+                    width: if(unitless(12px), 12px, px-to-rem(12px));
+                    height: if(unitless(12px), 12px, px-to-rem(12px));
+                  }
+                }
+              }
+            }
+        }
+
+        .save-view {
+            margin-right: if(unitless(15px), 15px, px-to-rem(15px));
+
+            .mat-mdc-button {
+                border-radius: 4px;
+                border: 1px solid #B1B3B5;
+                background: $white;
+                max-height: 30px;
+                min-width: if(unitless(90px), 90px, px-to-rem(90px));
+
+                .mdc-button__label {
+                    color: #1D1D1F;
+                    font-family: $font-Assistant;
+                    font-size: if(unitless(14px), 14px, px-to-rem(14px));
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 1536px) {
+
+        .views-teams-config {
+            .main-views-wrapper {
+                .views-wrapper {
+                    .select-views {
+                        .mat-mdc-button:not(:last-child){
+                            margin: 0 if(unitless(14.8px), 14.8px, px-to-rem(14.8px)) 0 if(unitless(14.8px), 14.8px, px-to-rem(14.8px));
+                        }
+                    }
+                }
+                .logged-user{
+                    .welcome-text{
+                        font-size: if(unitless(16px), 16px, px-to-rem(16px));
+                    }
+                }
+            }
+        }
+      }
+}
+
+

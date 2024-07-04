@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// variables.scss
+
+$font-Roboto: "Roboto", sans-serif;
+$font-Assistant: "Assistant", sans-serif;
+
+$black: #000000;
+$white: #ffffff; 
+$primary-grey-shade1: #666666;
+$primary-grey-shade2: #777777; 
+$primary-grey-shade3: #E0E0E0;
+$primary-grey-shade4: #F3F3F3;
+$primary-grey-shade5:#33414E;
+$primary-blue-shade1: #0C5AA3;
+$primary-blue-shade2: #2C7EB7;
+$header-bg-color:#1360AB;
+$header-search-bg-color: #8DC1F4;
+$notification-count: #E23A3A;
+$button-text-color:#1D1D1F;
+$primary-border-color:#B1B3B5;
+ 
+$secondary-green-shade1: #2F8F3F;
+$secondary-green-shade2: #E1F9E1;
+$secondary-blue-shade1: #006CD0;
+$secondary-blue-shade2: #A6C8EF;
+$secondary-blue-shade3: #D1EDFC;
+$secondary-red-shade1: #FC0000;
+$secondary-red-shade2: #F9AFAF;
+$secondary-red-shade3 : #D26262;
+$secondary-red-shade4 : #E56D6D;
+$secondary-red-shade5 : #FFEFEF;
+$secondary-yellow-shade : #F0AD4E;      
+$secondary-grey-shade1:#484848;
+$secondary-grey-shade2:#A5A5A5;
+$secondary-grey-shade3:#595959;
+ 
+$primary-button-enabled-bg: #464646;
+$primary-button-hover-bg: #C1C1C8;
+$primary-button-pressed-bg: #969696;
+$primary-button-disabled-bg: #D9D9E0;
+
+$secondary-button-enabled-bg: #FFFBFE;
+$secondary-button-hover-bg: #E6E6ED; 
+$secondary-button-pressed-bg: #D9D9E0;
+$secondary-button-disabled-bg: #fffbfe;
+
+$ghost-button-enabled-bg: #FFFBFE;
+$ghost-button-hover-bg: #E6E6ED; 
+$ghost-button-pressed-bg: #D9D9E0;
+$ghost-button-disabled-bg: #fffbfe;      
+
+$pill-bg-complete : #E1F9E1; 
+$pill-bg-inprogress : #A6C8EF;
+$pill-bg-delayed : #F9AFAF;
+$pill-bg-cancelled : #A5A5A5; 
+
+$pill-date-bg: #D1EDFC;  
+
+$pill-unpaid-bg:#FFEFEF;
+$pill-paid-bg:#E1F9E1;
+
+$pill-bg-true : #dcfde7;
+$pill-bg-false : #fde7dc;
+
+$pill-bg-rush : #E56D6D;
+         
+$pill-primary-contact-bg:#F0AD4E;
+
+/* -font size Variables- */
+$font-family:"Assistant", sans-serif;
+$base-font-size: 16px;
+$font-size60px: 3.75rem;
+$font-size48px: 3rem;
+$font-size32px: 2.25rem;
+// $font-size32px: 2rem;
+$font-size28px: 1.75rem;
+$font-size24px: 1.5rem;
+$font-size20px: 1.25rem;
+$font-size16px: 1rem;
+$font-size14px: 0.875rem;
+$font-size12px: 0.75rem;
+$font-size10px: 0.625rem;
+// $font-size1px: 0.063rem;
+
+// $heading1-font-size: 3.75rem;
+// $heading2-font-size: 3rem;
+// $heading3-font-size: 2.25rem;
+// $heading4-font-size: 1.75rem;
+// $heading5-font-size: 1.5rem;
+// $body-large-font-size: 1.25rem;
+// $body-regular-font-size: 1rem;
+// $body-small-font-size:0.875rem; 
+// $caption-regular-font-size:0.75rem;
+// $caption-small-font-size: 0.625rem;
+/* -grid Variables- */
+
+$grid-columns: 12;
+$grid-gutter: 1.5;
+
+$width100: 100%;
+$height100: 100%;
+
+$logo-max-width:230px;
+$logo-max-height:80px;

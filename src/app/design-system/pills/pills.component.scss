@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Import variables
+@import '../../../styles/variables';
+
+// Import mixins
+@import '../../../styles/mixins';
+
+
+
+.pill-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #CAC4D0;
+    padding: 20px;
+    border-radius: 6px;
+  }
+  
+  .pill-completed {
+    @include pill-style(4px 12px, 50px, $pill-bg-complete, $secondary-green-shade1, "Assistant", 600, $font-size14px);
+  }
+  
+  .pill-inprogress {
+    @include pill-style(4px 12px, 50px, $pill-bg-inprogress, $secondary-blue-shade1, "Assistant", 600, $font-size14px);
+  }
+  
+  .pill-delayed {
+    @include pill-style(4px 12px, 50px, $pill-bg-delayed, $secondary-red-shade1, "Assistant", 600, $font-size14px);
+  }
+  
+  .pill-cancelled {
+    @include pill-style(4px 12px, 50px, $pill-bg-cancelled, $secondary-grey-shade1, "Assistant", 600, $font-size14px);
+  }
+  
+  .pill-dated {
+    @include pill-style(4px 12px, 50px, $pill-date-bg, $secondary-grey-shade3, "Assistant", 600, $font-size14px);
+  }
+  .pill-timed {
+    @include pill-style(4px 12px, 50px, $pill-date-bg, $secondary-grey-shade3, "Assistant", 600, $font-size14px);
+  }
+  
+  .pill-unpaid {
+    @include pill-style(4px 12px, 50px, $pill-unpaid-bg, $secondary-red-shade3, "Assistant", 600, $font-size14px);
+  }
+  .pill-paid {
+    @include pill-style(4px 12px, 50px, $pill-paid-bg, $secondary-green-shade1, "Assistant", 600, $font-size14px);
+  }
+  .pill-false {
+    @include pill-style(4px 12px, 50px, $pill-unpaid-bg, $secondary-red-shade3, "Assistant", 600, $font-size14px);
+  }
+  .pill-true {
+    @include pill-style(4px 12px, 50px, $pill-paid-bg, $secondary-green-shade1, "Assistant", 600, $font-size14px);
+  }
+  .pill-rush {
+    @include pill-style(4px 12px, 50px, $pill-bg-rush, $white, "Assistant", 600, $font-size14px);
+  }
+  .pill-primary-contact {
+    @include pill-style(4px 12px, 50px, $pill-primary-contact-bg, $white, "Assistant", 600, $font-size14px);
+  }

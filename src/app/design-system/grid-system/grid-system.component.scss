@@ -1,0 +1,28 @@
+
+@import '../../../styles/variables';
+
+@import '../../../styles/mixins';
+
+@import '../../../styles/grid';
+
+@import '../../../styles.scss';
+
+div *{
+font-family: $font-Assistant;
+}
+
+.column-box{
+    border: 1px solid #e9e9e9;
+    flex-wrap: nowrap;
+    background-color: #F6F6F6;
+    text-align: center;
+}
+.column-border{
+    border-right: 1px solid #e9e9e9;
+    box-sizing: border-box;
+}
+
+.main-columns-wrap{
+    padding: 25px;
+    box-sizing: border-box;
+}

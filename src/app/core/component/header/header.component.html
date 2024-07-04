@@ -1,0 +1,104 @@
+<header>
+    <div class="header-wrapper">
+        <div class="logo">
+            <img src="../../../../assets/images/nav-icons/company-logo.png" />
+        </div>
+        <div class="nav-left-wrap">
+          <nav class="main-navigation" style="width: 100%;">
+            <ul>
+              <li class="nav-home">
+                <button mat-button type="button">Home</button>
+                </li>
+              <li class="nav-orders">
+                <button mat-button [matMenuTriggerFor]="menu">Orders
+                </button>
+                <mat-menu #menu="matMenu" class="create-order-submenu">
+                  <button mat-menu-item [matMenuTriggerFor]="submenu">Create Order</button>
+                  <button mat-menu-item>Search Orders</button>
+                  <button mat-menu-item>Manage Quote Requests</button>
+                  <button mat-menu-item>Manage Broadcast Requests</button>
+                  <button mat-menu-item>Import Orders</button>
+                  <button mat-menu-item>Bulk Reviewer Assignment</button>
+                  <button mat-menu-item>Order Calender</button>
+                </mat-menu>
+                <mat-menu #submenu="matMenu" class="create-order-submenu">
+                  <button mat-menu-item >Alternate Valuation</button>
+                  <button mat-menu-item>Appraisal</button>
+                  <button mat-menu-item>ATP Checking Group Display</button>
+                  <button mat-menu-item>AVM</button>
+                  <button mat-menu-item>AVM Group</button>
+                  <button mat-menu-item>BPO</button>
+                  <button mat-menu-item>External API</button>
+                </mat-menu>
+              </li>
+              <li class="nav-avm">
+                <button mat-button [matMenuTriggerFor]="avmMenu">AVM
+              </button>
+              <mat-menu #avmMenu="matMenu" class="create-order-submenu">
+                <button mat-menu-item>Order AVM</button>
+                <button mat-menu-item>Search AVMs</button>
+                <button mat-menu-item>Search Payments</button>
+              </mat-menu>
+            </li>
+              <li class="nav-reports">
+                <button mat-button [matMenuTriggerFor]="reportsMenu">Reports</button>
+              <mat-menu #reportsMenu="matMenu" class="create-order-submenu">
+                <button mat-menu-item>System Reports</button>
+                <button mat-menu-item>Report Builder</button>
+                <button mat-menu-item>Scheduled Reports</button>
+                <button mat-menu-item>Performance Analytics</button>
+              </mat-menu>
+            </li>
+              <li class="nav-accounts">
+                <button mat-button [matMenuTriggerFor]="accountsMenu">Accounts</button>
+              <mat-menu #accountsMenu="matMenu" class="create-order-submenu">
+                <button mat-menu-item>Accounts Receivable</button>
+                <button mat-menu-item>Accounts Payable</button>
+                <button mat-menu-item>Commissions Payable</button>
+              </mat-menu></li>
+              <li class="nav-admin">
+                <button mat-button type="button">Admin</button>
+              </li>
+            </ul>
+          </nav>
+          <div class="nav-search">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-button"><img src="../../../../assets/images/nav-icons/search-1.svg"/></button>
+          </div>
+        </div>
+        
+        
+        <div class="nav-right-wrap">
+          <div class="top-right-icons">
+            <ul>
+                <li>
+                  <button mat-button [matMenuTriggerFor]="helpMenu">
+                    <img src="./../../../assets/images/nav-icons/settings.svg"/>
+                  </button>
+                  <mat-menu #helpMenu="matMenu" class="create-order-submenu">
+                    <button mat-menu-item>View Knowledge Base</button>
+                    <button mat-menu-item>Open a Support Ticket</button>
+                    <button mat-menu-item>Request a Feature</button>
+                  </mat-menu>
+                  </li>
+                  <li>
+                    <button mat-button [matMenuTriggerFor]="settingsMenu">
+                      <img src="../../../../assets/images/nav-icons/help.svg"/>
+                    </button>
+                    <mat-menu #settingsMenu="matMenu" class="create-order-submenu">
+                      <button mat-menu-item>Change Password</button>
+                      <button mat-menu-item>Update Payment Method</button>
+                      <button mat-menu-item>Sign out</button>
+                    </mat-menu>
+                    </li>
+            </ul>
+          </div>
+          <div class="my-account">
+            <div class="name-initials">AB</div>
+            <button mat-button>Abby Ben
+            </button>
+          </div>
+
+        </div>
+    </div>
+  </header>

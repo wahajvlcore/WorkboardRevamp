@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Import variables
+@import '../../../styles/variables';
+
+// Import mixins
+@import '../../../styles/mixins';
+
+h5{
+    font-size: 25px;
+    font-weight: 400;
+    margin:8px 10px;
+}
+.item-palette, .secondary-item-palette {
+    display: flex;
+    flex-flow: row wrap;
+
+    .example {
+        border: 1px solid $primary-grey-shade3;
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        vertical-align: middle;
+
+        .list-block {
+            align-items: center;
+            display: flex;
+            margin: 5px;
+            width: 320px;
+
+            .color {
+                display: inline-block;
+                height: 20px;
+                margin-right: 4px;
+                padding: 0 5px;
+                position: relative;
+                text-align: center;
+                vertical-align: middle;
+                width: 70px;
+            }
+
+            .label {
+                display: inline-block;
+                font-size: 14px;
+                margin-left: 10px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+// Item Palette Colors
+.item-palette {
+    .example:nth-child(1) {
+        .list-block:nth-child(1) .color {
+            background-color: $black;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $primary-grey-shade1;    
+        }
+        .list-block:nth-child(3) .color {
+            background-color: $primary-grey-shade2;    
+        }
+    }
+    .example:nth-child(2) {
+        .list-block:nth-child(1) .color {
+            background-color: $primary-grey-shade3;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $primary-grey-shade4;    
+        }
+        .list-block:nth-child(3) .color {
+            background-color: $primary-grey-shade5;    
+        }
+    }
+    .example:nth-child(3) {
+        .list-block:nth-child(1) .color {
+            background-color: $primary-blue-shade1;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $primary-blue-shade2;    
+        }
+        .list-block:nth-child(3) .color {
+            background-color: $white;    
+        }
+    }
+}
+
+// Secondary Item Palette Colors
+.secondary-item-palette {
+    .example:nth-child(1) {
+        .list-block:nth-child(1) .color {
+            background-color: $secondary-green-shade1;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $secondary-green-shade2;    
+        }
+        .list-block:nth-child(3) .color {
+            background-color: $secondary-blue-shade1;    
+        }
+    }
+    .example:nth-child(2) {
+        .list-block:nth-child(1) .color {
+            background-color: $secondary-blue-shade2;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $secondary-blue-shade3;    
+        }
+        .list-block:nth-child(3) .color {
+            background-color: $secondary-red-shade1;    
+        }
+    }
+    .example:nth-child(3) {
+        .list-block:nth-child(1) .color {
+            background-color: $secondary-red-shade2;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $secondary-red-shade3;    
+        }
+        .list-block:nth-child(3) .color {
+            background-color: $secondary-red-shade4;    
+        }
+    }
+    .example:nth-child(4) {
+        .list-block:nth-child(1) .color {
+            background-color: $secondary-red-shade5;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $secondary-yellow-shade;    
+        }
+        .list-block:nth-child(3) .color {
+            background-color: $secondary-grey-shade1;    
+        }
+    }
+    .example:nth-child(5) {
+        .list-block:nth-child(1) .color {
+            background-color: $secondary-grey-shade2;    
+        }
+        .list-block:nth-child(2) .color {
+            background-color: $secondary-grey-shade3;    
+        }
+    }
+}

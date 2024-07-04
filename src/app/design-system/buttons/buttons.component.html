@@ -1,0 +1,87 @@
+<div class="py-4 px-4">
+    <span class="label-primary-buttons d-block">Primary Buttons</span>
+
+    <div class="primary-buttons">
+      <button class="button">Enabled</button>
+      
+      <button class="button hovered">Hovered</button>
+      <button class="button pressed">Pressed</button>
+      <button class="button disabled">Disabled</button>
+      <img src="../../assets/images/show-code.svg" />
+    </div>
+    
+
+<div class="primary-buttons-with-icons">
+  <button class="button">
+    <img src="../assets/images/add-white.svg"/>
+    Enabled</button>
+  <button class="button hovered">
+    <img src="../assets/images/add-white.svg"/>
+    Hovered</button>
+  <button class="button pressed">
+    <img src="../assets/images/add-white.svg"/>
+    Pressed</button>
+  <button class="button disabled">
+    <img src="../assets/images/add-white.svg"/>
+    Disabled</button>
+
+    <img src="../../assets/images/show-code.svg" mat-button [matMenuTriggerFor]="menu" class="viewCode" title="View Code" />
+    <img src="../../assets/images/copy.svg" [cdkCopyToClipboard]="value" matTooltip="{{ tooltipText }}"  (click)="changeTooltipText()" />
+
+    <!-- [cdkCopyToClipboard]="copiedContent" (click)="copyToClipboard()" -->
+    <mat-menu #menu="matMenu" class="viewCodeMenu">
+      <span>
+        &lt;button class="button"&gt;Enabled&lt;/button&gt;
+      </span>
+    </mat-menu>
+    
+</div>
+
+<span class="label-secondary-buttons d-block">Secondary Buttons</span>
+  
+<div class="secondary-buttons">
+  <button class="button">Enabled</button>
+  <button class="button hovered">Hovered</button>
+  <button class="button pressed">Pressed</button>
+  <button class="button disabled">Disabled</button>
+</div>
+
+<div class="secondary-buttons-with-icons">
+  <button class="button">
+    <img src="../assets/images/add-black.svg"/>
+    Enabled</button>
+  <button class="button hovered">
+    <img src="../assets/images/add-black.svg"/>
+    Hovered</button>
+  <button class="button pressed">
+    <img src="../assets/images/add-pressed.svg"/>
+    Pressed</button>
+  <button class="button disabled">
+    <img src="../assets/images/add-disabled.svg"/>
+    Disabled</button>
+</div>
+
+<span class="label-ghost-buttons d-block">Ghost Buttons</span>
+
+<div class="ghost-buttons">
+  <button class="button">Enabled</button>
+  <button class="button hovered">Hovered</button>
+  <button class="button pressed">Pressed</button>
+  <button class="button disabled">Disabled</button>
+</div>
+
+<div class="ghost-buttons-with-icons">
+  <button class="button">
+    <img src="../assets/images/add-black.svg"/>
+    Enabled</button>
+  <button class="button hovered">
+    <img src="../assets/images/add-black.svg"/>
+    Hovered</button>
+  <button class="button pressed">
+    <img src="../assets/images/add-pressed.svg"/>
+    Pressed</button>
+  <button class="button disabled">
+    <img src="../assets/images/add-disabled.svg"/>
+    Disabled</button>
+</div>
+</div>

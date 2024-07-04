@@ -1,0 +1,128 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Import variables
+@import './variables';
+
+
+
+@mixin primary-button-styles {
+  border-radius: 4px;
+  border: 1px solid $primary-border-color;
+  background-color: $white;
+  height: 30px;
+  // width: 81px;
+  padding: 5px 15px;
+
+  &:hover {
+    background-color: $primary-button-hover-bg; // Change background color when hovered
+  }
+
+  &:active {
+    background-color: $primary-button-pressed-bg; // Change background color when pressed
+  }
+
+  &:disabled{
+    background-color: $primary-button-disabled-bg; // Change background color when disabled
+    cursor: not-allowed; // Change cursor when disabled
+  }
+}
+
+@mixin primary-button-label-styles{
+  color: $button-text-color;
+  font-family: $font-Assistant;
+  font-size: $font-size14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+
+@mixin button-states($default-color, $hover-color, $pressed-color, $disabled-color) {
+    background-color: $default-color;
+    
+    &:hover {
+      background-color: $hover-color;
+    }
+    
+    &:active {
+      background-color: $pressed-color;
+    }
+    
+    &:disabled {
+      background-color: $disabled-color;
+      cursor: not-allowed;
+    }
+  }
+
+  @mixin pill-style($padding, $border-radius, $background-color, $color, $font-family, $font-weight, $font-size) {
+    padding: $padding;
+    border-radius: $border-radius;
+    background: $background-color;
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+  }
+  
+
+  @mixin columnwidth($width) {
+    flex: 0 0 auto;
+    width: $width;
+  }
+  
+  @mixin containerwidth($width, $grid-gutter) {
+    width: $width;
+    padding-right: calc(1 * $grid-gutter);
+    padding-left: calc(1 * $grid-gutter);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @mixin row($grid-gutter) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: $grid-gutter;
+    margin-left: $grid-gutter;
+  }
+  
+  @mixin make-grid($columns: $grid-columns) {
+    width: (calc($columns / $grid-columns) * 100%);
+    flex: 0 0 auto;
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+
+  @function px-to-rem($value, $fontSize: 1rem) {
+    @if (unitless($value) or unit($value)==rem) {
+      @return $value;
+    }
+    @else {
+      @return calc($value / $base-font-size * $fontSize);
+    }
+  } 
+
+  @mixin heading-text($fontFamily, $fontSize: 1rem, $lineHeight: 1rem) {
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: if(unitless($lineHeight), $lineHeight, px-to-rem($lineHeight)) !important;
+    margin: 0px !important;
+    font-size: if(unitless($fontSize), $fontSize, px-to-rem($fontSize)) !important;
+    font-family: $fontFamily !important;
+    padding: 5px;
+  }
+
+  @mixin body-text($fontFamily, $fontSize: 1rem, $lineHeight: 1rem) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: if(unitless($fontSize), $fontSize, px-to-rem($fontSize));
+    line-height: if(unitless($lineHeight), $lineHeight, px-to-rem($lineHeight));
+    font-family: $fontFamily !important;
+    margin: 0px !important;
+  }
